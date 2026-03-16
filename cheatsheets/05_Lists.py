@@ -32,6 +32,7 @@ lst.index(3)            # index of first occurrence of 3 (raises ValueError if m
 lst.index(3, 2)         # search starting from index 2
 lst.count(2)            # how many times 2 appears
 3 in lst                # True — simplest membership check
+all(lst)                # True if every element is truthy (empty list → True)
 
 # ── SORTING ──────────────────────────────────────────────────
 lst.sort()                          # sorts in place, modifies original
