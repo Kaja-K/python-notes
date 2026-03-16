@@ -121,6 +121,18 @@ np.vstack([a, b])                   # vertical stack (row-wise)
 np.hstack([a, b])                   # horizontal stack (column-wise)
 np.split(arr, 3)                    # split into 3 equal parts
 
+# ── COMBINING & SPLITTING ────────────────────────────────────
+np.concatenate([arr, arr])          # join along existing axis
+np.stack([[1, 2], [3, 4]])          # stack into 2D from list of 1D
+np.vstack([a, b])                   # vertical stack (row-wise)
+np.hstack([a, b])                   # horizontal stack (column-wise)
+np.split(arr, 3)                    # split into 3 equal parts
+
+# ── CONVERTING TO PYTHON TYPES ───────────────────────────────
+arr.tolist()                        # np.array → plain Python list  [1,2,3,4,5,6]
+matrix.tolist()                     # 2D array → list of lists  [[1,2,3],[4,5,6]]
+np.int32(5).tolist()                # np scalar → Python int  5  (not a list!)
+
 # ── DTYPE & MEMORY ───────────────────────────────────────────
 np.array([1, 2, 3], dtype=np.float32)   # specify element type
 np.array([1, 2, 3], dtype=np.int8)      # smaller type → less memory
