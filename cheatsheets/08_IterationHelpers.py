@@ -83,7 +83,7 @@ next(m)                                # "1"           — pull one value at a t
 
 # common use case — convert input
 sum(map(int, "12345"))                 # 15  — sum digits of a string
-sum(map(int, chunk))                   # sum digits of a chunk (useful in rev_rot!)
+sum(map(int, nums))                   # sum digits of a chunk (useful in rev_rot!)
 
 # map vs list comprehension — equivalent, pick whichever is clearer
 list(map(lambda x: x**2, nums))        # map style
