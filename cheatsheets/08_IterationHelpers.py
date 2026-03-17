@@ -63,10 +63,31 @@ data = ["Anna", "Jan", ""]
 all(name.strip() for name in data)  # False — empty string is falsy
 
 # ── MAP ──────────────────────────────────────────────────────
-# applies a function to every element, returns an iterator
-list(map(str, [1, 2, 3]))           # ["1", "2", "3"]
-list(map(lambda x: x**2, [1,2,3])) # [1, 4, 9]
-# usually cleaner as a list comprehension: [x**2 for x in [1,2,3]]
+# applies a function to every element of an iterable, returns a lazy iterator
+# map(function, iterable) — wraps result in list() to see output
+
+list(map(str, [1, 2, 3]))              # ["1", "2", "3"]   — convert each to string
+list(map(int, ["1", "2", "3"]))        # [1, 2, 3]         — convert each to int
+list(map(float, ["1.1", "2.2"]))       # [1.1, 2.2]        — convert each to float
+list(map(abs, [-1, -2, 3]))            # [1, 2, 3]         — apply built-in function
+list(map(lambda x: x**2, [1,2,3]))    # [1, 4, 9]         — apply lambda
+list(map(lambda x: x*2, "abc"))        # ["aa", "bb", "cc"] — works on strings too
+
+# two iterables at once — function must take 2 args
+list(map(lambda x,y: x+y, [1,2,3], [10,20,30]))  # [11, 22, 33]
+list(map(pow, [2,3,4], [3,2,1]))       # [8, 9, 4]         — 2³, 3², 4¹
+
+# map is lazy — evaluates only when needed (use list() to force)
+m = map(str, [1,2,3])                  # <map object> — not evaluated yet
+next(m)                                # "1"           — pull one value at a time
+
+# common use case — convert input
+sum(map(int, "12345"))                 # 15  — sum digits of a string
+sum(map(int, chunk))                   # sum digits of a chunk (useful in rev_rot!)
+
+# map vs list comprehension — equivalent, pick whichever is clearer
+list(map(lambda x: x**2, nums))        # map style
+[x**2 for x in nums]                   # comprehension style  ← usually more readable
 
 # ── FILTER ───────────────────────────────────────────────────
 # keeps only elements where function returns True

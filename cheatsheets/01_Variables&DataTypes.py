@@ -66,8 +66,18 @@ int.from_bytes(b'\x00\xff', "big")  # bytes → int  (255)
 # ── TYPE CHECKING ────────────────────────────────────────────
 type(x)                         # returns the type of x → <class 'int'>
 id(x)                           # returns memory address of x → e.g. 140234567
-isinstance(x, int)              # checks if x is an int → True
-isinstance(x, (int, float))     # checks against multiple types at once → True
+isinstance(x, int)              # True  — checks if x is an int
+isinstance(x, (int, float))     # True  — checks against multiple types at once
+isinstance("hi", str)           # True  — works for any built-in type
+isinstance([1,2], list)         # True
+isinstance(x, str)              # False — x is 10, not a string
+type(x) == int                  # True  — alternative, but isinstance preferred
+# isinstance vs type():
+#   isinstance(True, int)       → True  (bool is subclass of int)
+#   type(True) == int           → False (strict, no subclass check)
+# Common use case — guard against wrong input type:
+#   if isinstance(a, str): return "Error"
+#   if not isinstance(n, (int, float)): raise TypeError("Expected a number")
  
 # ── FALSY VALUES ─────────────────────────────────────────────
 # all of these evaluate to False in an if-statement
