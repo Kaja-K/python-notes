@@ -45,7 +45,11 @@ s.endswith("World")     # True
 # ── REPLACE & SPLIT ──────────────────────────────────────────
 s.replace(" ", ";")          # "Hello;World" — replace all occurrences
 s.replace("l", "L", 1)       # "HeLlo World" — third arg limits replacements
- 
+
+s.partition(" ")             # ("Hello", " ", "World") — splits on FIRST match, always returns 3-tuple
+s.rpartition(" ")            # ("Hello", " ", "World") — splits on LAST match
+"hello".partition("x")       # ("hello", "", "")       — separator not found: original in [0], rest empty
+
 cities = "WRO\nWAW\nKRK"
 cities.split("\n")           # ["WRO", "WAW", "KRK"] — split on newline
 "a,b,,c".split(",")          # ["a", "b", "", "c"]   — split on comma
