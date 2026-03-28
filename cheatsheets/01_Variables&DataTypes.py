@@ -16,6 +16,8 @@ float("10")                     # str → float
 str(5.75)                       # float → str
 bool(0)                         # 0, "", [], None → False; everything else → True
 int("1A", 16)                   # Hex str → int (dec 26)
+chr(65)                         # int → str (ASCII code 65 → "A")
+ord("A")                        # str → int (ASCII code of "A" → 65)
 
 # ── NUMBER SYSTEMS: TO INT ────────────────────────────────────
 int("0b1010", 2)                # binary str → int  (10)
