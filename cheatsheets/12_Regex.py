@@ -6,7 +6,7 @@ re.search(r'World', 'Hello World')      # scan entire string → first match or 
 re.findall(r'\d+', '10 apples, 20 oranges')  # all matches → ['10', '20']
 re.finditer(r'\d+', '10 apples, 20')   # like findall but returns iterator of match objects
 
-# re.fullmatch — cały string musi pasować do wzorca (nic nie może wystawać)
+# re.fullmatch — match entire string
 re.fullmatch(r'\d{3}', '123')   # match
 re.fullmatch(r'\d{3}', '1234')  # None — za długi
 
