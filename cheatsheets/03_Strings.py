@@ -62,6 +62,10 @@ cities.split("\n")           # ["WRO", "WAW", "KRK"] — split on newline
 "hi".ljust(10, "-")     # "hi--------"  — custom fill character
 "hi".rjust(10)          # "        hi"  — right-aligned
 "42".zfill(5)           # "00042"        — zero-pad (useful for numbers)
+"hi".rjust(10, "-")     # "--------hi"  — right-aligned with custom fill    
+"hi".center(10, "*")   # "****hi****"  — centered with custom fill
+"hi".center(10, "-")   # "---hi-----"  — centered with custom fill (odd padding goes to the right)
+"hi".center(9, "-")    # "--hi----"   — centered with custom fill (odd padding goes to the right)
  
 # ── SLICING ──────────────────────────────────────────────────
 s[0]        # "H"         — first character
