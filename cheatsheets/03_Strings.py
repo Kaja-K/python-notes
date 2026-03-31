@@ -87,3 +87,5 @@ s.__getitem__(0)         # "H"   — same as s[0]
 s.__iter__()             # iterator over characters — used in for loops
 s.__repr__()             # "'Hello World'" — unambiguous representation
 s.__eq__("Hello World")  # True  — same as s == "Hello World"
+s.__ne__("Hello")        # True  — same as s != "Hello"
+s.__hash__()             # hash value of the string (used in sets/dicts)
